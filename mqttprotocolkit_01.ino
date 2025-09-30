@@ -86,9 +86,9 @@ void connect() {
     delay(1000);
   }
   Serial.println("\nconnected!");
-  client.subscribe("topicAnda/buzzer");
-  client.subscribe("topicAnda/relay1");
-  client.subscribe("topicAnda/relay2");
+  client.subscribe("kon1/buzzer");
+  client.subscribe("kon1/relay1");
+  client.subscribe("kon1/relay2");
     client.subscribe("kon1/ledMerah");
   client.subscribe("kon1/ledBiru");
   client.subscribe("kon1/ledAmber");
@@ -106,7 +106,7 @@ void messageReceived(String &topic, String &payload) {
   
   //   ----Tulis Kod Kawalan ( subsribe here ) ---------------------
   //==========================Buzzer Control ========================
-     if(String(topic) == "topicAnda/buzzer") 
+     if(String(topic) == "kon1/buzzer") 
   {
       if(payload =="on")
       {
@@ -125,7 +125,7 @@ void messageReceived(String &topic, String &payload) {
   } 
   //==========================Relay 1 Control ========================
  
-  if(String(topic) == "topicAnda/relay1") 
+  if(String(topic) == "kon1/relay1") 
   {
       if(payload =="on")
       {
@@ -144,7 +144,7 @@ void messageReceived(String &topic, String &payload) {
 
   //==========================Relay 2 Control ========================
 
-   if(String(topic) == "topicAnda/relay2") 
+   if(String(topic) == "kon1/relay2") 
   {
       if(payload =="on")
       {
